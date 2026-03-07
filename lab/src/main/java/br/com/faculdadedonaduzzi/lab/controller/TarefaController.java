@@ -46,4 +46,8 @@ public class TarefaController {
         return new TarefaReponseDTO(savedTask);
     }
 
+    @GetMapping("/HEALTH")
+    public String getVersion() {
+        return "OK";
+    }
 }
