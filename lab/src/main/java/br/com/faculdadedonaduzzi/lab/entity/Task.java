@@ -19,4 +19,6 @@ public class Task {
 
     private String prazo;
 
+
+    private Date dataPrevisao;
 }
