@@ -1,6 +1,7 @@
 package br.com.faculdadedonaduzzi.lab.entity;
 
 import jakarta.persistence.*;
+import java.util.Date;
 import lombok.Data;
 
 @Data
@@ -21,4 +22,14 @@ public class Task {
 
 
     private Date dataPrevisao;
+
+    public Task(String titulo, String descricao, TaskStatus status, String prazo, Date dataPrevisao) {
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.status = status;
+        this.prazo = prazo;
+        this.dataPrevisao = dataPrevisao;
+    }
+
+    public Task(){}
 }

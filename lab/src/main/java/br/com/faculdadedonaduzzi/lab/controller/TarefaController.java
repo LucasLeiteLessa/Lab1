@@ -18,7 +18,7 @@ public class TarefaController {
 
     @GetMapping("/version")
     public String getVersion() {
-        return "v1.0.0";
+        return "v1.1.0";
     }
 
     @GetMapping
@@ -47,7 +47,7 @@ public class TarefaController {
     }
 
     @GetMapping("/HEALTH")
-    public String getVersion() {
+    public String getStatus() {
         return "OK";
     }
 }
