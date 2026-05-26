@@ -18,7 +18,7 @@ class TarefaControllerTest {
 
     @Test
     void testGetAllTasks() throws Exception {
-        mockMvc.perform(get("/tarefa"))
+        mockMvc.perform(get("/tarefas"))
                 .andExpect(status().isOk());
     }
 
