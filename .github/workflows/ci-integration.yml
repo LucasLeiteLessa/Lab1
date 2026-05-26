@@ -1,13 +1,14 @@
-name: CI Kanban API
+name: CI - validação de Código e testes
 
 # 1. GATILHO: Quando este robô deve acordar?
 on:
   push:
     branches:
-      - master #VERIFIQUE SE VOCÊ ESTÁ USANDO main OU master e altere para a que você estiver usando
+      - develop #VERIFIQUE SE VOCÊ ESTÁ USANDO main OU master e altere para a que você estiver usando
+      - 'feature/**'
   pull_request:
     branches:
-      - master #VERIFIQUE SE VOCÊ ESTÁ USANDO main OU master e altere para a que você estiver usando
+      - develop #VERIFIQUE SE VOCÊ ESTÁ USANDO main OU master e altere para a que você estiver usando
 
 # 2. O TRABALHO (Jobs)
 jobs:
@@ -32,3 +33,6 @@ jobs:
       # O comando real que nós digitávamos no terminal
       - name: Compilar e Testar com Maven
         run: mvn clean package
+
+      - name: Garantir que compila (Build)
+        run: mvn clean package -DskipTests
