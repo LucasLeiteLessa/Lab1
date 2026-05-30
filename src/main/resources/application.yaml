@@ -1,13 +1,10 @@
 spring:
   application:
     name: lab
-
-  h2:
-    console:
-      enabled: true
-
 management:
   endpoints:
+    health:
+        show-details: always
     web:
       exposure:
-        include: "health,info"
+        include: "health,info,metrics"
