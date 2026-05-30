@@ -36,3 +36,15 @@ jobs:
 
       - name: Garantir que compila (Build)
         run: mvn clean package -DskipTests
+
+      - name: Compilar código
+        run: mvn clean package -DskipTests
+
+      - name: Scan de segurança no Código e Dependências (SCA)
+        uses:
+            aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          ignore-unfixed: true
+          format: 'table'
+          severity: 'HIGH,CRITICAL'
